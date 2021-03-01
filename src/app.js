@@ -20,40 +20,10 @@ hbs.registerPartials(partialsPath);
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath)); //for root
 
-app.get('/help', (req, res) => {
-    res.render('help',{
-        helpText: 'This is some helpful text!',
-        title: 'Help',
-        name: 'Augustin Pascu'
-    });
-});
-
-app.get('/about', (req, res) => {
-    res.render('about',{
-        title: 'About Me',
-        name: 'Augustin Pascu'
-    });
-});
-
-
 app.get('', (req, res) =>{
     res.render('index', {
         title: 'Weather',
         name: 'Augustin Pascu'
-    });
-});
-
-
-app.get('/products', (req, res) => {
-    if (!req.query.search) {
-        return res.send({
-            error: 'You must provide a search term'
-        });
-    }
-
-    console.log(req.query.search);
-    res.send({
-        products: []
     });
 });
 
@@ -81,15 +51,6 @@ app.get('/weather', (req, res) => {
             });
         });
     });
-});
-
-
-app.get('/help/*', (req, res) =>{
-    res.render('404',{
-        title: '404',
-        name: 'Augustin Pascu',
-        errorMessage: 'Help article not found!'
-    })
 });
 
 
