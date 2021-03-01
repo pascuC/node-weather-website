@@ -1,63 +1,303 @@
-body {
-    color: #333333;
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 0 16px;
+*
+{
+    outline: none;
     
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+}
+body {
+  font-family: "Century Gothic", "Lato", sans-serif;
+  margin: 0;
 }
 
-.main-content{
-    flex-grow: 1;
+a {
+  text-decoration: none;
 }
 
-footer {
-    color: #888888;
-    border-top: 1px solid #eeeeee;
-    margin-top: 16px;
-    padding: 16px 0;
+.et-hero-tabs,
+.et-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  /* background: #eee; */
+  background: url(https://images.unsplash.com/photo-1569428034239-f9565e32e224?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1358&q=80);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 0 2em;
+}
+.et-hero-tabs h1,
+.et-slide h1 {
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 1rem;
+}
+.et-hero-tabs h3,
+.et-slide h3 {
+  font-size: 1rem;
+  letter-spacing: 0.3rem;
+  opacity: 0.6;
 }
 
-header {
-    margin-top: 16px;
-    margin-bottom: 48px;
+.et-hero-tabs-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  z-index: 10;
+}
+.et-hero-tabs-container--top {
+  position: fixed;
+  top: 0;
 }
 
-h1 {
-   font-size: 64px;
-   margin-bottom: 16px;
+.et-hero-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: #000;
+  letter-spacing: 0.1rem;
+  transition: all 0.5s ease;
+  font-size: 0.8rem;
+}
+.et-hero-tab:hover {
+  color: white;
+  background: #008ca1;
+  transition: all 0.5s ease;
 }
 
-header a {
-    color: #888888;
-    margin-right: 16px;
-    text-decoration: none;
+.et-hero-tab-slider {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  background:  #008ca1;
+  transition: left 0.3s ease;
 }
 
-.portrait {
-    width: 250px;
+@media (min-width: 800px) {
+  .et-hero-tabs h1,
+.et-slide h1 {
+    font-size: 3rem;
+  }
+  .et-hero-tabs h3,
+.et-slide h3 {
+    font-size: 1rem;
+  }
+
+  .et-hero-tab {
+    font-size: 1rem;
+  }
 }
 
-input {
-    border: 1px solid #cccccc;
-    border-radius: 5%;
-    padding: 8px;
+#tab-search {
+  background: url(https://images.unsplash.com/photo-1529832393073-e362750f78b3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+  background-size: cover;
+  background-position: center;
 }
 
-input:focus { 
-    outline: none !important;
-    border-color: #888888;
-    box-shadow: 0 0 10px #888888;
+#tab-about {
+  background: url(https://images.unsplash.com/photo-1559618949-6f9b12049f55?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+  background-size: cover;
+  background-position: center;
 }
 
-button {
+#tab-help {
+  background: url(https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80);
+  background-size: cover;
+  background-position: center;
+}
+
+/* .tb
+{
+    display: table;
+    width: 100%;
+} */
+
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input, button
+{
+    color: #fff;
+    font-family: "Century Gothic", "Lato", sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+#cover
+{
+    /* position: absolute; */
+    top: 50%;
+    left: 0;
+    right: 0;
+    /* width: 550px; */
+    padding: 35px;
+    margin: -83px auto 0 auto;
+    background-color:  #008ca1;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px  #008ca1, 0 0 0 20px #ffffffeb;
+    transform: scale(0.55);
+}
+
+form
+{
+    height: 96px;
+}
+
+input[type="text"]
+{
+    width: 100%;
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: 0.1rem;
+}
+
+input[type="text"]::-moz-placeholder
+{
+    color: #FFF;
+}
+
+input[type="text"]:-ms-input-placeholder
+{
+    color: #FFF;
+}
+
+input[type="text"]::placeholder
+{
+    color: #FFF;
+}
+
+#s-cover
+{
+    width: 1px;
+    padding-left: 35px;
+}
+
+button
+{
+    position: relative;
+    display: block;
+    width: 84px;
+    height: 96px;
     cursor: pointer;
-    border: 1px solid #888888;
-    border-radius: 5%;
-    background: #888888;
-    color: white;
-    padding: 8px;
+}
+
+#s-circle
+{
+    position: relative;
+    top: -8px;
+    left: 0;
+    width: 43px;
+    height: 43px;
+    margin-top: 0;
+    border-width: 15px;
+    border: 15px solid #fff;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+
+button span
+{
+    position: absolute;
+    top: 68px;
+    left: 43px;
+    display: block;
+    width: 45px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    transform: rotateZ(52deg);
+    transition: 0.5s ease all;
+}
+
+button span:before, button span:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle
+{
+    top: -1px;
+    width: 67px;
+    height: 15px;
+    border-width: 0;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+#s-cover:hover span
+{
+    top: 50%;
+    left: 56px;
+    width: 25px;
+    margin-top: -9px;
+    transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before
+{
+    bottom: 11px;
+    transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after
+{
+    bottom: -11px;
+    transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before, #s-cover:hover button span:after
+{
+    right: -6px;
+    width: 40px;
+    background-color: #fff;
+}
+
+#ytd-url {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  margin: 20px;
+  color: #fff;
+  font-family: "Century Gothic", "Lato", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #008ca1;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -5px FFF;
+  z-index: 125;
+}
+
+
+#message-1 {
+  /* font-style: italic; */
+  font-size: 1.8em;
+}
+
+#message-2 {
+  font-style: italic;
+  font-size: 1.5em;
 }

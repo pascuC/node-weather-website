@@ -8,22 +8,51 @@
 </head>
 
 <body>
-    <div class="main-content">
-        {{>header}}
-        <p>Use this site to get your weather!</p>
-
-        <form>
-            <input placeholder="Location">
-            <button>Search</button>
-        </form>
-
-        <p id="message-1"></p>
-        <p id="message-2"></p>
+   <section class="et-hero-tabs">
+    <h1>Get your weather</h1>
+    <h3>Simple and fast</h3>
+    <div class="et-hero-tabs-container">
+      <a class="et-hero-tab" href="#tab-search">Search</a>
+      <a class="et-hero-tab" href="#tab-about">About</a>
+      <a class="et-hero-tab" href="#tab-help">Help</a>
+      <span class="et-hero-tab-slider"></span>
     </div>
+  </section>
 
-    
-    {{>footer}}
-    <script src="/js/app.js"></script>
+  <!-- Main -->
+  <main class="et-main">
+    <section class="et-slide" id="tab-search">
+      <div id="cover">
+        <form method="get" action="">
+          <div class="tb">
+            <div class="td"><input type="text" placeholder="Location" required></div>
+            <div class="td" id="s-cover">
+              <button type="submit">
+                <div id="s-circle"></div>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <h3 id="message-1"></h3>
+      <h3 id="message-2"></h3>  
+    </section>
+    <section class="et-slide" id="tab-about">
+      <h2>This site was created by Pascu Augustin</h2>
+      <h3>APIs from:</h3>
+      <p>mapbox.com</p>
+      <p>weatherstack.com</p>
+    </section>
+    <section class="et-slide" id="tab-help">
+      <h2>Contact</h2>
+      <h3>pascuc97c@gmail.com</h3>
+    </section>
+  </main>
+<!-- Scripts -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script  src="js/script.js"></script>
+  <script src="/js/app.js"></script>
 </body>
 
 
